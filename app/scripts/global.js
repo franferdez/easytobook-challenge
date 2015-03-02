@@ -5,26 +5,30 @@
 define(function(require){
   var $ = require('jquery'),
       _ = require('underscore'),
-      ProductCollection = require('collections/ProductCollection'),
+      ProductsCollection = require('collections/ProductsCollection'),
       json = require('text!vendor/products.json'),
-      Dispatcher = require('dispatcher');
+      Dispatch = require('dispatcher');
 
 
     var global  = (function(){
 		/* ****** Privates ******* */
 
-		//var dispatcher = new Dispatcher();
-
-		console.log(Dispatcher);
+		/* ****** Reveal Globals ******* */
 
 		// Normally i use model.fetch() but in this case i cant use an ajax call because of the cross-domain policy
-    	var products = new ProductCollection(JSON.parse(json).products);
 
-    	console.log(products);
+    	var constants = {
+    		PRODUCT_ADD: 'PRODUCT_ADD',
+    		PRODUCT_UPD: 'PRODUCT_UPD',
+    		PRODUCT_DEL: 'PRODUCT_DEL'
+    	}
 
-		/* ****** Reveal Globals ******* */
+    	var dispatcher = {};//new Dispatch.Dispatcher;
+
+
 		return {
-			//dispatcher: dispatcher,
+			constants: constants,
+			dispatcher: dispatcher
 			//products: products // I add the model to global to always use the same instance.
 		};
 
