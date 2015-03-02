@@ -6,11 +6,31 @@ define([
 ], function ($, Backbone) {
     'use strict';
 
-    var RouterRouter = Backbone.Router.extend({
+    var Router = Backbone.Router.extend({
         routes: {
+        	'products': 'products',
+        	'products/:id': 'productDetail',
+        	'productslist': 'productsList',
+        	'basket': 'productBasket'
+        },
+
+        products: function(){
+        	console.log('products');
+        },
+
+        productsList: function(){
+        	console.log('productsList');
+        },
+
+        productDetail: function(id){
+        	console.log('productDetail');
+        },
+
+        productBasket: function(){
+        	console.log('productBasket');
         }
 
     });
 
-    return RouterRouter;
+    return Router;
 });

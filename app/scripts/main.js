@@ -19,6 +19,7 @@ require.config({
         models: 'models',
         collections: 'collections',
         vendor: 'vendor',
+        helpers: 'helpers',
         jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/lodash/dist/lodash',
@@ -40,11 +41,16 @@ require.config({
     }
 });
 
-require([
-    'global',
+require([   
+    'jquery',
+    'underscore',
     'backbone',
+    'global',
+    'helpers/Utils',
+    'routes/router',
     'jsx!views/app'
-], function (g,Backbone,App) {
+], function ($,_,Backbone,g,Utils,Router,App) {
+    var router = new Router();
     Backbone.history.start();
     var app = new App();
     app.render();

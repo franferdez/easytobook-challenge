@@ -7,29 +7,43 @@ define(function(require){
       _ = require('underscore'),
       ProductsCollection = require('collections/ProductsCollection'),
       json = require('text!vendor/products.json'),
-      Dispatch = require('dispatcher');
+      Dispatch = require('dispatcher'),
+      Utils =require('helpers/Utils')
 
 
     var global  = (function(){
 		/* ****** Privates ******* */
 
+		var constants = {
+	    		PRODUCT_ADD: 'PRODUCT_ADD',
+	    		PRODUCT_UPD: 'PRODUCT_UPD',
+	    		PRODUCT_DEL: 'PRODUCT_DEL'
+	    	},
+
+			store = [],
+
+			addStrore = function(namespace, instance){
+				if(!this.store['namespace']){
+					this.store['namespace'] = instance;
+				}else{
+					Utils.log('You already stored a instace in that namespace');
+				}
+			},
+
+			getStrore = function(namespace){
+				if(this.store['namespace']){
+					return this.store['namespace'];
+				}else{
+					Utils.log('You dont have an instance whit that namespace');
+				}
+			},
+
+    		dispatcher = new Dispatch.Dispatcher;
+
 		/* ****** Reveal Globals ******* */
-
-		// Normally i use model.fetch() but in this case i cant use an ajax call because of the cross-domain policy
-
-    	var constants = {
-    		PRODUCT_ADD: 'PRODUCT_ADD',
-    		PRODUCT_UPD: 'PRODUCT_UPD',
-    		PRODUCT_DEL: 'PRODUCT_DEL'
-    	}
-
-    	var dispatcher = {};//new Dispatch.Dispatcher;
-
-
 		return {
 			constants: constants,
 			dispatcher: dispatcher
-			//products: products // I add the model to global to always use the same instance.
 		};
 
 	})();
