@@ -37,6 +37,5 @@
   },
   "_source": "git://github.com/jhudson8/react-backbone.git",
   "_target": "~0.21.1",
-  "_originalSource": "react-backbone",
-  "_direct": true
+  "_originalSource": "react-backbone"
 }

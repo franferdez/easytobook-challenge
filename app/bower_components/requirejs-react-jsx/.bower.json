@@ -1,6 +1,6 @@
 {
   "name": "requirejs-react-jsx",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "homepage": "https://github.com/podio/requirejs-react-jsx",
   "authors": [
     "Søren Brokær <rasmussen@podio.com>"
@@ -28,14 +28,13 @@
     "react": ">=0.11.2",
     "requirejs-text": ">=2.0.12"
   },
-  "_release": "0.12.0",
+  "_release": "0.12.1",
   "_resolution": {
     "type": "version",
-    "tag": "v0.12.0",
-    "commit": "6992c8deac1822d0427fc7df2bfd68b0b932b527"
+    "tag": "0.12.1",
+    "commit": "9fd6d7b6c1038430dfb746a2160496225d393097"
   },
   "_source": "git://github.com/podio/requirejs-react-jsx.git",
   "_target": "~0.12.0",
-  "_originalSource": "requirejs-react-jsx",
-  "_direct": true
+  "_originalSource": "requirejs-react-jsx"
 }
