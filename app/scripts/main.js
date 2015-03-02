@@ -27,7 +27,8 @@ require.config({
         JSXTransformer: '../bower_components/react/JSXTransformer',
         reactBackbone: '../bower_components/react-backbone/react-backbone-with-deps',
         jsx: '../bower_components/requirejs-react-jsx/jsx',
-        text: '../bower_components/requirejs-text/text'
+        text: '../bower_components/requirejs-text/text',
+        dispatcher: '../bower_components/flux/dist/Flux'
     },
     jsx: {
         fileExtension: ".js",

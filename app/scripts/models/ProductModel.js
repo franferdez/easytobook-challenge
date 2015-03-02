@@ -12,13 +12,14 @@ define([
         },
 
         defaults: {
-            id: '',
+            id: 0,
             name: '',
             description: '',
             img_md: '',
             img_bg: '',
             price: '',
-            qty: ''
+            qty: '',
+            sold: ''
         }
     });
 
