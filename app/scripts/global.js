@@ -5,10 +5,8 @@
 define(function(require){
   var $ = require('jquery'),
       _ = require('underscore'),
-      ProductsCollection = require('collections/ProductsCollection'),
-      json = require('text!vendor/products.json'),
       Dispatch = require('dispatcher'),
-      Utils =require('helpers/Utils')
+      Utils = require('helpers/Utils');
 
 
     var global  = (function(){
@@ -22,28 +20,30 @@ define(function(require){
 
 			store = [],
 
-			addStrore = function(namespace, instance){
+			addStore = function(namespace, instance){
 				if(!this.store['namespace']){
 					this.store['namespace'] = instance;
 				}else{
-					Utils.log('You already stored a instace in that namespace');
+					throw new Error('You already stored a instace in that namespace');
 				}
 			},
 
-			getStrore = function(namespace){
+			getStore = function(namespace){
 				if(this.store['namespace']){
 					return this.store['namespace'];
 				}else{
-					Utils.log('You dont have an instance whit that namespace');
+					throw new Error('You dont have an instance whit that namespace');
 				}
 			},
 
-    		dispatcher = new Dispatch.Dispatcher;
+    		dispatcher = new Dispatch.Dispatcher();
 
 		/* ****** Reveal Globals ******* */
 		return {
 			constants: constants,
-			dispatcher: dispatcher
+			dispatcher: dispatcher,
+			addStore: addStore,
+			getStore: getStore
 		};
 
 	})();

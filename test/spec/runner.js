@@ -6,7 +6,8 @@ require.config({
         jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/lodash/dist/lodash',
-        text: '../bower_components/requirejs-text/text'
+        text: '../bower_components/requirejs-text/text',
+        dispatcher: '../bower_components/flux/dist/Flux'
     },
     shim: {
         underscore: {

@@ -1,13 +1,11 @@
 'use strict';
 
-define([
-    'underscore',
-    'backbone',
-    'global',
-    'collections/BaseCollection',
-    'models/ProductModel',
-    'dispatcher'
-], function (_, Backbone,g,BaseCollection,ProductModel,Dispatch) {
+define( function (require) {
+    var _ = require('underscore'),
+        Backbone = require('backbone'),
+        g = require('global'),
+        BaseCollection = require('collections/BaseCollection'),
+        ProductModel = require('models/ProductModel');
 
     var ProductsCollection = BaseCollection.extend({
 
