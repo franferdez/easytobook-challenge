@@ -7,12 +7,7 @@ define(function(require){
       g = require('global'),
       Backbone = require('backbone'),
       React = require('react'),
-      reactBackbone = require('reactBackbone'),
       GridComponent = require('jsx!components/GridComponent');
-
-    //import the backbone mixins
-    reactBackbone(React, Backbone, _, $);    
-
 
     var ProductListView = React.createClass({
       render: function (){

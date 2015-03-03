@@ -1,5 +1,5 @@
 {
-  "name": "greenhousetest",
+  "name": "EasyToBook Challenge",
   "version": "0.0.0",
   "dependencies": {
     "bootstrap-sass-official": "~3.2.0",
@@ -11,8 +11,8 @@
     "modernizr": "~2.7.1",
     "react": "~0.12.2",
     "requirejs-react-jsx": "~0.12.0",
-    "react-backbone": "~0.21.1",
-    "flux": "~2.0.2"
+    "flux": "~2.0.2",
+    "react-bootstrap": "~0.16.0"
   },
   "devDependencies": {}
 }

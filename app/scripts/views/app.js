@@ -5,11 +5,8 @@ define(function(require){
       _ = require('underscore'),
       g = require('global'),
       React = require('react'),
-      reactBackbone = require('reactBackbone'), 
       ProductListView = require('jsx!views/ProductListView');
 
-  //import the backbone mixins
-  //reactBackbone(React, Backbone, _, $);
   function App() {
   
   };

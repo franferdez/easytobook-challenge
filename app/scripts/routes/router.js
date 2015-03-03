@@ -11,7 +11,8 @@ define([
         	'products': 'products',
         	'products/:id': 'productDetail',
         	'productslist': 'productsList',
-        	'basket': 'productBasket'
+        	'basket': 'productBasket',
+        	'*path': 'products'
         },
 
         products: function(){

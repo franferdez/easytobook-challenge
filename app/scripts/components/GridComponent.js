@@ -3,11 +3,8 @@
 define(function(require){
   var $ = require('jquery'),
       _ = require('underscore'),
-      React = require('react'),
-      reactBackbone = require('reactBackbone');
+      React = require('react');
 
-  //import the backbone mixins
-  //reactBackbone(React, Backbone, _, $); 
 
   var GridComponent =  React.createClass({
     render: function(){

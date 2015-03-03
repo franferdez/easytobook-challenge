@@ -26,10 +26,10 @@ require.config({
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
         react: '../bower_components/react/react-with-addons',
         JSXTransformer: '../bower_components/react/JSXTransformer',
-        reactBackbone: '../bower_components/react-backbone/react-backbone-with-deps',
         jsx: '../bower_components/requirejs-react-jsx/jsx',
         text: '../bower_components/requirejs-text/text',
-        dispatcher: '../bower_components/flux/dist/Flux'
+        dispatcher: '../bower_components/flux/dist/Flux',
+        reactBootstrap: '../bower_components/react-bootstrap/lib'
     },
     jsx: {
         fileExtension: ".js",
@@ -52,6 +52,6 @@ require([
 ], function ($,_,Backbone,g,Utils,Router,App) {
     var router = new Router();
     Backbone.history.start();
-    var app = new App();
-    app.render();
+    /*var app = new App();
+    app.render();*/
 });
