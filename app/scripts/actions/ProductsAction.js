@@ -6,13 +6,13 @@ define(function(require){
       	g = require('global')
 
 	return {
-	    add: function(text) {
+	    add: function(product) {
 	        g.dispatch(g.constants.PRODUCT_ADD, { product: product });
 	    },
-	    toggle: function(todo) {
+	    update: function(product) {
 	        g.dispatch(g.constants.PRODUCT_UPD, { product: product });
 	    },
-	    remove: function(todo) {
+	    remove: function(product) {
 	        g.dispatch(g.constants.PRODUCT_DEL, { product: product });
 	    }
 	};

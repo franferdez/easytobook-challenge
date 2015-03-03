@@ -21,16 +21,16 @@ define(function(require){
 			store = [],
 
 			addStore = function(namespace, instance){
-				if(!this.store['namespace']){
-					this.store['namespace'] = instance;
+				if(!this.store[namespace]){
+					this.store[namespace] = instance;
 				}else{
 					throw new Error('You already stored a instace in that namespace');
 				}
 			},
 
 			getStore = function(namespace){
-				if(this.store['namespace']){
-					return this.store['namespace'];
+				if(this.store[namespace]){
+					return this.store[namespace];
 				}else{
 					throw new Error('You dont have an instance whit that namespace');
 				}
