@@ -19,19 +19,19 @@ define(function(require) {
 
 		it('global should be able to store a collection',function(){
 			expect(g).to.exist;
-			g.addStore('products',ProductsCollection);
+			g.addStore('products',new ProductsCollection(JSON.parse(json).products));
 			expect(g.getStore('products')).to.be.instanceOf(ProductsCollection);
 		});
 		
 		it('global should fail when you try to store a stored collection',function(){
 			expect(g).to.exist;
-			g.addStore('products',ProductsCollection);
-			expect(g.addStore('products',ProductsCollection)).to.fail;
+			//g.addStore('products',ProductsCollection);
+			expect(g.addStore('products',new ProductsCollection)).to.fail;
 		});
 
 		it('global should fail when you try to get a non existing collection',function(){
 			expect(g).to.exist;
-			expect(g.getStore('products')).to.fail;
+			expect(g.getStore('www')).to.be.equal(false);
 		});
 
 
@@ -46,7 +46,7 @@ define(function(require) {
 			
 			it('ProductsCollection should add a new model by add action',function(){
 				expect(g).to.exist;
-				g.addStore('products', new ProductsCollection(JSON.parse(json).products));
+				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
 				var model = new ProductModel({name: 'test'});
 				ProductsAction.add(model);
 				expect(g.getStore('products').get(0).get('name')).to.be.equal('test');
@@ -54,7 +54,7 @@ define(function(require) {
 
 			it('ProductsCollection should update a model by update action',function(){
 				expect(g).to.exist;
-				g.addStore('products', new ProductsCollection(JSON.parse(json).products));
+				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
 				var model = g.getStore('products').get('1751463876');
 				model.set('test');
 				ProductsAction.update(model);
@@ -63,13 +63,11 @@ define(function(require) {
 			
 			it('ProductsCollection should delete a  model by delete action',function(){
 				expect(g).to.exist;
-				g.addStore('products', new ProductsCollection(JSON.parse(json).products));
+				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
 				var model = g.getStore('products').get('1751463876');
 				ProductsAction.delete(model);
 				expect(g.getStore('products').get('1751463876')).to.not.exist;
 			});
-
-			
 
 		});
 

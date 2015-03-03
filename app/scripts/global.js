@@ -21,18 +21,19 @@ define(function(require){
 			store = [],
 
 			addStore = function(namespace, instance){
-				if(!this.store[namespace]){
-					this.store[namespace] = instance;
+				if(!store[namespace]){
+					store[namespace] = instance;
 				}else{
-					throw new Error('You already stored a instace in that namespace');
+					Utils.log('You already stored a instace in that namespace');
 				}
 			},
 
 			getStore = function(namespace){
-				if(this.store[namespace]){
-					return this.store[namespace];
+				if(store[namespace]){
+					return store[namespace];
 				}else{
-					throw new Error('You dont have an instance whit that namespace');
+					Utils.log('You dont have an instance whit that namespace');
+					return false;
 				}
 			},
 
