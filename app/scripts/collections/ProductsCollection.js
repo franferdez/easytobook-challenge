@@ -5,31 +5,32 @@ define( function (require) {
         Backbone = require('backbone'),
         g = require('global'),
         BaseCollection = require('collections/BaseCollection'),
-        ProductModel = require('models/ProductModel');
+        ProductModel = require('models/ProductModel'),
+        Utils = require('helpers/utils');
 
     var ProductsCollection = BaseCollection.extend({
 
         model: ProductModel,
 
         initialize: function() {
-            this.dispatchToken = g.dispatcher.register(this.dispatchCallback);
+            this.dispatchToken = g.dispatcher.register(_.bind(this.dispatchCallback,this));
         },
 
         dispatchCallback: function(payload){
             switch(payload.actionType) {
                 case g.constants.PRODUCT_ADD:
-                    //this.add({ text: payload.text });
-                    console.log('PRODUCT_ADD');
+                    this.add(payload.product);
+                    Utils.log('PRODUCT_ADD');
                     break;
 
                 case g.constants.PRODUCT_UPD:
-                    //payload.todo.toggleComplete();
-                    console.log('PRODUCT_UPD');
+                    this.set(payload.product);
+                    Utils.log('PRODUCT_UPD');
                     break;
 
                 case g.constants.PRODUCT_DEL:
-                    //this.remove(payload.todo);
-                    console.log('PRODUCT_DEL');
+                    this.remove(payload.product);
+                    Utils.log('PRODUCT_DEL');
                     break;
             }
         }

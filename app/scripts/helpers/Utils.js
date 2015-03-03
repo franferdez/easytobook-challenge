@@ -14,7 +14,7 @@ define(function(require){
 				if(this.debug && console){
 					console.log.apply(console,arguments);
 				}
-			}
+			};
 
 		/* ****** Reveal Globals ******* */
 		return {

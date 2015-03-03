@@ -47,16 +47,17 @@ define(function(require) {
 			it('ProductsCollection should add a new model by add action',function(){
 				expect(g).to.exist;
 				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
-				var model = new ProductModel({name: 'test'});
+				var model = new ProductModel({id: '194816',name: 'test'});
 				ProductsAction.add(model);
-				expect(g.getStore('products').get(0).get('name')).to.be.equal('test');
+				expect(g.getStore('products').get('194816')).to.exits;
+				expect(g.getStore('products').get('194816').get('name')).to.be.equal('test');
 			});
 
 			it('ProductsCollection should update a model by update action',function(){
 				expect(g).to.exist;
 				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
 				var model = g.getStore('products').get('1751463876');
-				model.set('test');
+				model.set('name','test');
 				ProductsAction.update(model);
 				expect(g.getStore('products').get('1751463876').get('name')).to.be.equal('test');
 			});
@@ -65,7 +66,7 @@ define(function(require) {
 				expect(g).to.exist;
 				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
 				var model = g.getStore('products').get('1751463876');
-				ProductsAction.delete(model);
+				ProductsAction.remove(model);
 				expect(g.getStore('products').get('1751463876')).to.not.exist;
 			});
 
