@@ -1,30 +1,25 @@
 'use strict';
 
-define([
-    'jquery',
-    'underscore',
-    'backbone'
-], function ($, _, Backbone, JST) {
-    
-    var BaseViewView = Backbone.View.extend({
-        //template: JST['app/scripts/templates/BaseView.ejs'],
+define(function(require){
+  var $ = require('jquery'),
+      _ = require('underscore'),
+      g = require('global'),
+      React = require('react');
 
-        tagName: 'div',
-
-        id: '',
-
-        className: '',
-
-        events: {},
-
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
-        },
-
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+  function BaseView() {
+    this.view = React.createClass({
+        render: function(){
+            return(<p>BaseView instance</p>);
         }
     });
+  };
 
-    return BaseViewView;
+  BaseView.prototype.render = function () {
+
+    var model = {};
+    
+    React.render(<this.view />, $('#main-content')[0]);
+  };
+
+  return BaseView;
 });

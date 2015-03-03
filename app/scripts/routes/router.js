@@ -1,10 +1,14 @@
-/*global define*/
+'use strict';
 
-define([
-    'jquery',
-    'backbone'
-], function ($, Backbone) {
-    'use strict';
+define(function (require) {
+    var $ = require('jquery'),
+     	_ = require('underscore'),
+     	React = require('react'),
+     	g = require('global'),
+     	Utils = require('helpers/Utils'),
+     	ProductsView = require('jsx!views/ProductsView'),
+     	ProductsCollection = require('collections/ProductsCollection'),
+     	products = require('text!vendor/products.json');
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -16,19 +20,27 @@ define([
         },
 
         products: function(){
-        	console.log('products');
+        	Utils.log('rendering ProductsView');
+
+        	if(!g.getStore('products')){
+        		// normally here will start fetch the collection before render.
+        		g.addStore('products', new ProductsCollection(JSON.parse(products).products));
+        	}
+
+        	var view  = new ProductsView;
+        	view.render();
         },
 
         productsList: function(){
-        	console.log('productsList');
+        	Utils.log('productsList');
         },
 
         productDetail: function(id){
-        	console.log('productDetail');
+        	Utils.log('productDetail');
         },
 
         productBasket: function(){
-        	console.log('productBasket');
+        	Utils.log('productBasket');
         }
 
     });
