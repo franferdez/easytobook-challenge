@@ -6,6 +6,7 @@ define(function(require) {
   		$ = require('jquery'),
         Backbone = require('backbone'),
   		g = require('global'),
+  		store = require('stores/store'),
   		json = require('text!vendor/products.json'),
   		ProductsCollection = require('collections/ProductsCollection'),
   		ProductModel = require('models/ProductModel'),
@@ -17,23 +18,20 @@ define(function(require) {
 			expect(JSON.parse(json).products).to.be.instanceof(Array);
 		});
 
-		it('global should be able to store a collection',function(){
-			expect(g).to.exist;
-			g.addStore('products',new ProductsCollection(JSON.parse(json).products));
-			expect(g.getStore('products')).to.be.instanceOf(ProductsCollection);
+		it('store should have a ProductsCollection',function(){
+			expect(store).to.exist;
+			expect(store.products).to.be.instanceOf(ProductsCollection);
 		});
 		
 		it('global should fail when you try to store a stored collection',function(){
-			expect(g).to.exist;
-			//g.addStore('products',ProductsCollection);
-			expect(g.addStore('products',new ProductsCollection)).to.fail;
+			expect(store).to.exist;
+			expect(store.add('products',new ProductsCollection)).to.fail;
 		});
 
 		it('global should fail when you try to get a non existing collection',function(){
-			expect(g).to.exist;
-			expect(g.getStore('www')).to.be.equal(false);
+			expect(store).to.exist;
+			expect(store.get('www')).to.be.equal(false);
 		});
-
 
 		describe('ProductsCollection and actions', function() {
 
@@ -45,29 +43,34 @@ define(function(require) {
 
 			
 			it('ProductsCollection should add a new model by add action',function(){
-				expect(g).to.exist;
+				expect(store).to.exist;
 				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
 				var model = new ProductModel({id: '194816',name: 'test'});
 				ProductsAction.add(model);
-				expect(g.getStore('products').get('194816')).to.exits;
-				expect(g.getStore('products').get('194816').get('name')).to.be.equal('test');
+				expect(store.products.get('194816')).to.exits;
+				expect(store.products.get('194816').get('name')).to.be.equal('test');
 			});
 
 			it('ProductsCollection should update a model by update action',function(){
-				expect(g).to.exist;
-				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
-				var model = g.getStore('products').get('1751463876');
+				expect(store).to.exist;
+				var model = store.products.get('1751463876');
 				model.set('name','test');
 				ProductsAction.update(model);
-				expect(g.getStore('products').get('1751463876').get('name')).to.be.equal('test');
+				expect(store.products.get('1751463876').get('name')).to.be.equal('test');
 			});
 			
 			it('ProductsCollection should delete a  model by delete action',function(){
-				expect(g).to.exist;
-				//g.addStore('products', new ProductsCollection(JSON.parse(json).products));
-				var model = g.getStore('products').get('1751463876');
+				expect(store).to.exist;
+				var model = store.products.get('1751463876');
 				ProductsAction.remove(model);
-				expect(g.getStore('products').get('1751463876')).to.not.exist;
+				expect(store.products.get('1751463876')).to.not.exist;
+			});
+
+			it('ProductsCollection should be able to be filtered ',function(){
+				expect(store).to.exist;
+				var model =store.products.get('1751463876');
+				ProductsAction.remove(model);
+				expect(store.products.get('1751463876')).to.not.exist;
 			});
 
 		});
