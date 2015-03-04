@@ -49,6 +49,8 @@ require([
     'helpers/Utils',
     'routes/router'
 ], function ($,_,Backbone,g,Utils,Router) {
+    
     var router = new Router();
+
     Backbone.history.start();
 });

@@ -6,9 +6,7 @@ define(function (require) {
      	React = require('react'),
      	g = require('global'),
      	Utils = require('helpers/Utils'),
-     	ProductsView = require('jsx!views/ProductsView'),
-     	ProductsCollection = require('collections/ProductsCollection'),
-     	products = require('text!vendor/products.json');
+     	ProductsView = require('jsx!views/ProductsView');
 
     var Router = Backbone.Router.extend({
         routes: {
@@ -21,11 +19,6 @@ define(function (require) {
 
         products: function(){
         	Utils.log('rendering ProductsView');
-
-        	if(!g.getStore('products')){
-        		// normally here will start fetch the collection before render.
-        		g.addStore('products', new ProductsCollection(JSON.parse(products).products));
-        	}
 
         	var view  = new ProductsView;
         	view.render();

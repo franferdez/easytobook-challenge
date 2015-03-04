@@ -7,19 +7,24 @@ define(function(require){
 
     var Utils  = (function(){
 		/* ****** Privates ******* */
-
-		var debug = true,
-
-			log = function(){
-				if(this.debug && console){
-					console.log.apply(console,arguments);
-				}
-			};
+			 
 
 		/* ****** Reveal Globals ******* */
 		return {
-			debug: debug,
-			log: log
+			debug: true,
+			
+			log: function(){
+				if(this.debug && console){
+					console.log.apply(console,arguments);
+				}
+			},
+
+			inherit: function(obj){
+				// Object.create polyfill 
+				function CloneFactory () {}
+			    CloneFactory.prototype = obj;
+			    return new CloneFactory();
+			}
 		};
 
 	})();

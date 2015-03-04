@@ -18,33 +18,12 @@ define(function(require){
 	    		PRODUCT_DEL: 'PRODUCT_DEL'
 	    	},
 
-			store = [],
-
-			addStore = function(namespace, instance){
-				if(!store[namespace]){
-					store[namespace] = instance;
-				}else{
-					Utils.log('You already stored a instace in that namespace');
-				}
-			},
-
-			getStore = function(namespace){
-				if(store[namespace]){
-					return store[namespace];
-				}else{
-					Utils.log('You dont have an instance whit that namespace');
-					return false;
-				}
-			},
-
     		dispatcher = new Dispatch.Dispatcher();
 
 		/* ****** Reveal Globals ******* */
 		return {
 			constants: constants,
-			dispatcher: dispatcher,
-			addStore: addStore,
-			getStore: getStore
+			dispatcher: dispatcher
 		};
 
 	})();

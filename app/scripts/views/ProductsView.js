@@ -8,18 +8,18 @@ define(function(require){
       Backbone = require('backbone'),
       React = require('react'),
       BaseView = require('jsx!views/BaseView'),
+      store = require('stores/store'),
       storeMixin = require('helpers/storeMixin'),
       ProductThumbnailComponent = require('jsx!components/ProductThumbnailComponent');
 
     var ProductsView = function(){};
-
     ProductsView.prototype = BaseView.prototype;
 
     ProductsView.prototype.view =  React.createClass({
-        mixins: [storeMixin(g.getStore('products'))],
+        mixins: [storeMixin(store.products)],
 
         getInitialState: function() {
-            return { productsStore: g.getStore('products') };
+            return { productsStore: store.products };
         },
 
         render: function (){
