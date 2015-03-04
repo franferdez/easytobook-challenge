@@ -7,18 +7,18 @@ define(function(require){
       g = require('global'),
       Backbone = require('backbone'),
       React = require('react'),
-      Input = require('reactBootstrap').Input,
-      Button = require('reactBootstrap').Button;
+      ProductsAction = require('actions/ProductsAction');
 
     var SearchFilterComponent =  React.createClass({
 
-    	getInitialState: function() {
-            return { searchFilter: '' };
+    	handleInputChange: function() {
+            var searchValue = this.refs.filterInputText.getDOMNode().value.toLowerCase();
+            this.props.onUserInput(searchValue);
         },
 
         render: function (){
           return (
-            <Input type="text" placeholder="Search..." buttonAfter={<Button>Search</Button>} />
+          	<input type="text" className="form-control" value={this.props.searchFilter} placeholder="Search..." aria-describedby="Search"  ref="filterInputText" onChange={this.handleInputChange} />
           );
         }
       });

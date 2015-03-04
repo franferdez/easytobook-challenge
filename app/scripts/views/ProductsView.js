@@ -11,7 +11,8 @@ define(function(require){
       store = require('stores/store'),
       storeMixin = require('helpers/storeMixin'),
       BaseTemplate = require('jsx!components/BaseTemplateComponent'),
-      ProductThumbnailComponent = require('jsx!components/ProductThumbnailComponent');
+      ProductThumbnailComponent = require('jsx!components/ProductThumbnailComponent'),
+      SearchFilter = require('jsx!components/SearchFilterComponent');
 
     var ProductsView = function(){};
     ProductsView.prototype = BaseView.prototype;
@@ -20,13 +21,26 @@ define(function(require){
         mixins: [storeMixin(store.products)],
 
         getInitialState: function() {
-            return { productsStore: store.products };
+            return { 
+              productsStore: store.products,
+              SearchFilter: ''
+            };
+        },
+
+        handleUserInput: function(filterText) {
+            this.setState({
+                productsStore: store.products.filterCollection(function(model){
+                  return model.get('name').toLowerCase().indexOf(filterText) >= 0;
+                }),
+                searchFilter: filterText
+            });
         },
 
         render: function (){
           var collection = this.state.productsStore.models;
           return ( 
             <BaseTemplate>
+              <SearchFilter searchFilter={this.state.searchFilter} onUserInput={this.handleUserInput} />
               <div className="row">
                 {collection.map(function(productModel) {
                   return <ProductThumbnailComponent  model={productModel} />    
