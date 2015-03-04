@@ -6,7 +6,8 @@ define(function(require){
       _ = require('underscore'),
       g = require('global'),
       Backbone = require('backbone'),
-      React = require('react');
+      React = require('react'),
+      SearchFilter = require('jsx!components/SearchFilterComponent');
 
     var BaseTemplateComponent =  React.createClass({
 
@@ -15,6 +16,7 @@ define(function(require){
             <section>
                 <header>
                   <h1>Products</h1>
+                  <SearchFilter />
                 </header>
                 <article>
                 	{this.props.children}

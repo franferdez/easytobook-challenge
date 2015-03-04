@@ -29,7 +29,7 @@ require.config({
         jsx: '../bower_components/requirejs-react-jsx/jsx',
         text: '../bower_components/requirejs-text/text',
         dispatcher: '../bower_components/flux/dist/Flux',
-        reactBootstrap: '../bower_components/react-bootstrap/lib'
+        reactBootstrap: '../bower_components/react-bootstrap/react-bootstrap'
     },
     jsx: {
         fileExtension: ".js",
