@@ -10,16 +10,17 @@ define(function(require){
     render: function(){
         var model = this.props.model;
 
+        var description = model.get('description').split(';');
+
+
+
         return(         
               <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">
-                  <img src="..." alt="..." />
+                  <img src={'images/products/' + model.get('img_md')} alt={model.get('name')} />
                   <div className="caption">
                     <h3>{model.get('name')}</h3>
-                    <p>{model.get('description')}</p>
-                    <p><a href="#" className="btn btn-primary" role="button">Button</a> 
-                       <a href="#" className="btn btn-default" role="button">Button</a>
-                    </p>
+                    <p className="price">{model.get('price') + ' EUR'}</p>
                   </div>
                 </div>
               </div>

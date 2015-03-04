@@ -131,3 +131,20 @@ h2{
 .row{
     margin-top: 30px;
 }
+
+
+/******* Thumbnails ********/
+.thumbnail{
+    min-height: 350px;
+    img{
+        height: 220px;
+    }
+    h3{
+        font-size: 18px;
+        font-weight: normal;
+    }
+    .price{
+        font-weight: bold;
+        font-size: 18px;
+    }
+}

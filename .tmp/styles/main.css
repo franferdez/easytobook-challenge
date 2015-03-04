@@ -8187,3 +8187,23 @@ h2 {
 .row {
   margin-top: 30px;
 }
+
+/******* Thumbnails ********/
+/* line 137, ../../app/styles/main.scss */
+.thumbnail {
+  min-height: 350px;
+}
+/* line 139, ../../app/styles/main.scss */
+.thumbnail img {
+  height: 220px;
+}
+/* line 142, ../../app/styles/main.scss */
+.thumbnail h3 {
+  font-size: 18px;
+  font-weight: normal;
+}
+/* line 146, ../../app/styles/main.scss */
+.thumbnail .price {
+  font-weight: bold;
+  font-size: 18px;
+}
