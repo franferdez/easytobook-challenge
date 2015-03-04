@@ -54,18 +54,18 @@ define(function(require) {
 			it('ProductsCollection should update a model by update action',function(){
 				expect(store).to.exist;
 				var length = store.products.length;
-				var model = store.products.get('1751463876');
-				model.set('name','test');
+				var model = store.products.get('194816');
+				model.set('name','test changed');
 				ProductsAction.update(model);
 				expect(store.products.length).to.be.equal(length);
-				expect(store.products.get('1751463876').get('name')).to.be.equal('test');
+				expect(store.products.get('194816').get('name')).to.be.equal('test changed');
 			});
 			
 			it('ProductsCollection should delete a  model by delete action',function(){
 				expect(store).to.exist;
-				var model = store.products.get('1751463876');
+				var model = store.products.get('194816');
 				ProductsAction.remove(model);
-				expect(store.products.get('1751463876')).to.not.exist;
+				expect(store.products.get('194816')).to.not.exist;
 			});
 
 			it('ProductsCollection should be able to be filtered ',function(){
@@ -80,9 +80,6 @@ define(function(require) {
 						return model.get('name').indexOf('cup') >= 0;
 					},
 					filtered = store.products.filterCollection(filterFn2);
-
-				console.log(filtered);
-				console.log(filteredProducts);
 
 				expect(filtered.length).to.be.equal(filteredProducts.length);	
 				expect(store.products.length).to.be.equal(length);
