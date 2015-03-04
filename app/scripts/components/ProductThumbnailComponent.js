@@ -10,10 +10,6 @@ define(function(require){
     render: function(){
         var model = this.props.model;
 
-        var description = model.get('description').split(';');
-
-
-
         return(         
               <div className="col-sm-6 col-md-4">
                 <div className="thumbnail">

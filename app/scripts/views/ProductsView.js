@@ -10,6 +10,7 @@ define(function(require){
       BaseView = require('jsx!views/BaseView'),
       store = require('stores/store'),
       storeMixin = require('helpers/storeMixin'),
+      BaseTemplate = require('jsx!components/BaseTemplateComponent'),
       ProductThumbnailComponent = require('jsx!components/ProductThumbnailComponent');
 
     var ProductsView = function(){};
@@ -25,18 +26,13 @@ define(function(require){
         render: function (){
           var collection = this.state.productsStore.models;
           return ( 
-            <section>
-                <header>
-                  <h1>Products</h1>
-                </header>
-                <article>
-                  <div className="row">
-                  {collection.map(function(productModel) {
-                    return <ProductThumbnailComponent  model={productModel} />    
-                  })}
-                  </div>
-                </article>
-            </section>
+            <BaseTemplate>
+              <div className="row">
+                {collection.map(function(productModel) {
+                  return <ProductThumbnailComponent  model={productModel} />    
+                })}
+              </div>
+            </BaseTemplate>
           );
         }
       });
