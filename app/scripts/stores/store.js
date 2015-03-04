@@ -10,6 +10,7 @@ define(function(require){
     var $ = require('jquery'),
         _ = require('underscore'),
         Backbone = require('backbone'),
+        Utils = require('helpers/utils'),
         ProductsCollection = require('collections/ProductsCollection'),
         products = require('text!vendor/products.json');
 

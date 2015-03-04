@@ -24,7 +24,8 @@ define( function (require) {
                     break;
 
                 case g.constants.PRODUCT_UPD:
-                    this.set(payload.product);
+                    if( this.get(payload.product.get('id')))
+                        this.get(payload.product.get('id')).set(payload.product.attributes);
                     Utils.log('PRODUCT_UPD');
                     break;
 

@@ -53,9 +53,11 @@ define(function(require) {
 
 			it('ProductsCollection should update a model by update action',function(){
 				expect(store).to.exist;
+				var length = store.products.length;
 				var model = store.products.get('1751463876');
 				model.set('name','test');
 				ProductsAction.update(model);
+				expect(store.products.length).to.be.equal(length);
 				expect(store.products.get('1751463876').get('name')).to.be.equal('test');
 			});
 			
@@ -68,9 +70,22 @@ define(function(require) {
 
 			it('ProductsCollection should be able to be filtered ',function(){
 				expect(store).to.exist;
-				var model =store.products.get('1751463876');
-				ProductsAction.remove(model);
-				expect(store.products.get('1751463876')).to.not.exist;
+				var products = JSON.parse(json).products,
+					length = store.products.length,
+					filterFn1 = function(obj){
+						return obj.name.indexOf('cup') >= 0;
+					},
+					filteredProducts = _.filter(products, filterFn1),
+					filterFn2 = function(model){
+						return model.get('name').indexOf('cup') >= 0;
+					},
+					filtered = store.products.filterCollection(filterFn2);
+
+				console.log(filtered);
+				console.log(filteredProducts);
+
+				expect(filtered.length).to.be.equal(filteredProducts.length);	
+				expect(store.products.length).to.be.equal(length);
 			});
 
 		});
