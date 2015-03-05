@@ -8217,8 +8217,9 @@ h2 {
 /* line 156, ../../app/styles/main.scss */
 .products-list {
   list-style-type: none;
+  padding: 0;
 }
-/* line 158, ../../app/styles/main.scss */
+/* line 159, ../../app/styles/main.scss */
 .products-list .products-list-item {
   padding: 5px 10px;
   border-width: 1px 0;
@@ -8226,14 +8227,14 @@ h2 {
   border-color: transparent;
   border-bottom-color: #e4e4e4;
 }
-/* line 164, ../../app/styles/main.scss */
+/* line 165, ../../app/styles/main.scss */
 .products-list .products-list-item img {
   display: block;
   float: left;
   height: 120px;
   width: 130px;
 }
-/* line 170, ../../app/styles/main.scss */
+/* line 171, ../../app/styles/main.scss */
 .products-list .products-list-item .caption {
   float: left;
 }

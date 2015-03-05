@@ -6,12 +6,13 @@ define(function (require) {
      	React = require('react'),
      	g = require('global'),
      	Utils = require('helpers/Utils'),
-        InterfaceRouter = require('jsx!routes/InterfaceRouter');
+        InterfaceRouter = require('jsx!routes/InterfaceRouter'),
+        store = require('stores/store');
 
     var Router = Backbone.Router.extend({
         routes: {
         	'products': 'products',
-        	'products/:id': 'productDetail',
+        	'product/:id': 'productDetail',
         	'list': 'productsList',
         	'basket': 'productBasket',
         	'*path': 'products'
@@ -29,6 +30,7 @@ define(function (require) {
 
         productDetail: function(id){
         	Utils.log('Rendering: ProductDetailView');
+            this.model = store.products.get(id);
             this.current = "detail";
         },
 

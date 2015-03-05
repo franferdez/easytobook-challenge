@@ -25,16 +25,20 @@ define(function(require){
       },
       render : function() {
         switch(this.props.router.current  ) {
-          case "products":
+          case 'products':
             return <ProductsView />;
             break;
 
-          case "list":
+          case 'list':
             return <ProductsListView />;
             break;
 
-          case "basket":
+          case 'basket':
             return <ProductsBasketView />;
+            break;
+
+          case 'detail':
+            return <ProductDetailView model={this.props.router.model} />;
             break;
 
           default:
