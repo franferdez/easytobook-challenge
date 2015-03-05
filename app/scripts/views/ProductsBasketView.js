@@ -23,21 +23,29 @@ define(function(require){
         getInitialState: function() {
             return { 
               productsStore: store.basket,
-              //SearchFilter: ''
             };
         },
 
         render: function (){
           var collection = this.state.productsStore.models;
-          return ( 
-            <BaseTemplate>
-              <ul className="products-list">
-                {collection.map(function(productModel) {
-                  return <ProductListItemComponent  model={productModel} />    
-                })}
-              </ul>
-            </BaseTemplate>
-          );
+          if(collection.length>0){
+            return ( 
+              <BaseTemplate>
+                <ul className="products-list">
+                  {collection.map(function(productModel) {
+                    return <ProductListItemComponent  model={productModel} />    
+                  })}
+                </ul>
+              </BaseTemplate>
+            );
+          }else{
+            return(
+              <BaseTemplate>
+                <p>No products in the basket</p>
+              </BaseTemplate>
+            );
+          }
+          
         }
       });
 

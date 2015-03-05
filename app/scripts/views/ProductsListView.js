@@ -40,7 +40,15 @@ define(function(require){
           var collection = this.state.productsStore.models;
           return ( 
             <BaseTemplate>
-              <SearchFilter searchFilter={this.state.searchFilter} onUserInput={this.handleUserInput} />
+              <div className="change-view">
+                <SearchFilter searchFilter={this.state.searchFilter} onUserInput={this.handleUserInput} />
+                <a href="#products" title="Products List">
+                  <button type="button" className="btn btn-default" aria-label="Products List">
+                    <span className="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                  </button>
+                </a>
+              </div>
+              
               <ul className="products-list">
                 {collection.map(function(productModel) {
                   return <ProductListItemComponent  model={productModel} />    

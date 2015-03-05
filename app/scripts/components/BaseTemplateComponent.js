@@ -14,21 +14,11 @@ define(function(require){
           return ( 
             <section>
                 <header className="header">
-                  <h1>Products</h1>
+                  <h1><a href="#products">Products</a></h1>
                   <nav>
-                    <a href="#products" title="Products List">
-                      <button type="button" className="btn btn-default" aria-label="Products List">
-                        <span className="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                      </button>
-                    </a>
-                    <a href="#list" title="Products Thumbnails">
-                      <button type="button" className="btn btn-default" aria-label="Products Thumbnails">
-                        <span className="glyphicon glyphicon-th" aria-hidden="true"></span>
-                      </button>
-                    </a>
                     <a href="#basket" title="Products Basket">
                       <button type="button" className="btn btn-default" aria-label="Products Basket">
-                        <span className="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        <span className="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Go to Basket
                       </button>
                     </a>
                   </nav>
@@ -37,7 +27,7 @@ define(function(require){
                 	{this.props.children}
                 </article>
                 <footer>
-                    <p>Developed by Francisco</p>
+                    <p>Developed by Francisco Fernandez Novella</p>
                 </footer>
             </section>
           );

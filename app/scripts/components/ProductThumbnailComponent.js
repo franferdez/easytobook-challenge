@@ -24,7 +24,7 @@ define(function(require){
                 <div className="caption">
                   <h3>{model.get('name')}</h3>
                   <p className="price">{model.get('price') + ' EUR'}</p>
-                  <button type="button" className="btn btn-info" onClick={this.addToCart}>Buy</button>
+                  <button type="button" className="btn btn-info" onClick={this.addToCart}>Add to Basket</button>
                 </div>
               </div>
             </div>

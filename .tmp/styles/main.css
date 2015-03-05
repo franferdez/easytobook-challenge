@@ -8058,10 +8058,23 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid #e5e5e5;
   border-radius: 4px;
+  overflow: overlay;
+  margin-top: 10px;
+  height: 65px;
+}
+/* line 41, ../../app/styles/main.scss */
+.header h1 {
+  float: left;
+  margin-top: 10px;
+}
+/* line 45, ../../app/styles/main.scss */
+.header nav {
+  float: right;
+  margin-top: 15px;
 }
 
 /* Make the masthead heading the same height as the navigation */
-/* line 41, ../../app/styles/main.scss */
+/* line 52, ../../app/styles/main.scss */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -8070,51 +8083,51 @@ body {
 }
 
 /* Custom page footer */
-/* line 49, ../../app/styles/main.scss */
+/* line 60, ../../app/styles/main.scss */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
-/* line 55, ../../app/styles/main.scss */
+/* line 66, ../../app/styles/main.scss */
 .container-narrow > hr {
   margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
-/* line 60, ../../app/styles/main.scss */
+/* line 71, ../../app/styles/main.scss */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* line 65, ../../app/styles/main.scss */
+/* line 76, ../../app/styles/main.scss */
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
 }
 
 /* Supporting marketing content */
-/* line 71, ../../app/styles/main.scss */
+/* line 82, ../../app/styles/main.scss */
 .marketing {
   margin: 40px 0;
 }
 
-/* line 75, ../../app/styles/main.scss */
+/* line 86, ../../app/styles/main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 81, ../../app/styles/main.scss */
+  /* line 92, ../../app/styles/main.scss */
   .container {
     max-width: 930px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 86, ../../app/styles/main.scss */
+  /* line 97, ../../app/styles/main.scss */
   .header,
   .marketing,
   .footer {
@@ -8123,18 +8136,18 @@ body {
   }
 
   /* Space out the masthead */
-  /* line 93, ../../app/styles/main.scss */
+  /* line 104, ../../app/styles/main.scss */
   .header {
     margin-bottom: 30px;
   }
 
   /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 97, ../../app/styles/main.scss */
+  /* line 108, ../../app/styles/main.scss */
   .jumbotron {
     border-bottom: 0;
   }
 }
-/* line 102, ../../app/styles/main.scss */
+/* line 113, ../../app/styles/main.scss */
 article {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -8142,8 +8155,14 @@ article {
   margin-bottom: 30px;
 }
 
+/* line 121, ../../app/styles/main.scss */
+footer p {
+  text-align: right;
+  color: white;
+}
+
 /*** Stytles ***/
-/* line 110, ../../app/styles/main.scss */
+/* line 128, ../../app/styles/main.scss */
 .bar {
   -webkit-transition: width 2.50s ease !important;
   -moz-transition: width 2.50s ease !important;
@@ -8151,116 +8170,139 @@ article {
   transition: width 2.50s ease !important;
 }
 
-/* line 117, ../../app/styles/main.scss */
+/* line 135, ../../app/styles/main.scss */
 .glyphicon {
   margin-left: 10px;
 }
 
-/* line 120, ../../app/styles/main.scss */
+/* line 138, ../../app/styles/main.scss */
 .glyphicon-remove {
   color: #d9534f;
 }
 
-/* line 123, ../../app/styles/main.scss */
+/* line 141, ../../app/styles/main.scss */
 .glyphicon-ok {
   color: #5cb85c;
 }
 
-/* line 126, ../../app/styles/main.scss */
+/* line 144, ../../app/styles/main.scss */
 .panel-body {
   padding: 25px 60px;
 }
-/* line 128, ../../app/styles/main.scss */
+/* line 146, ../../app/styles/main.scss */
 .panel-body li {
   margin-bottom: 40px;
 }
 
-/* line 132, ../../app/styles/main.scss */
+/* line 150, ../../app/styles/main.scss */
 .panel-footer {
   background: #E3E3E3;
   margin-bottom: 0px;
 }
-/* line 135, ../../app/styles/main.scss */
+/* line 153, ../../app/styles/main.scss */
 .panel-footer button {
   margin: 0 auto;
   display: block;
 }
 
-/* line 140, ../../app/styles/main.scss */
+/* line 158, ../../app/styles/main.scss */
 .progress {
   margin-top: 8px;
 }
 
-/* line 143, ../../app/styles/main.scss */
+/* line 161, ../../app/styles/main.scss */
 h2 {
   margin: 0;
   padding: 0;
 }
 
-/* line 147, ../../app/styles/main.scss */
+/* line 165, ../../app/styles/main.scss */
 .row {
   margin-top: 30px;
 }
 
+/* line 170, ../../app/styles/main.scss */
+.change-view input {
+  width: 85%;
+  display: inline;
+}
+/* line 174, ../../app/styles/main.scss */
+.change-view a {
+  float: right;
+}
+/* line 177, ../../app/styles/main.scss */
+.change-view button {
+  padding-left: 10px;
+  padding-right: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 182, ../../app/styles/main.scss */
+.change-view button span {
+  margin: 0;
+  font-size: 20px;
+}
+
 /******* Product Thumbnails ********/
-/* line 153, ../../app/styles/main.scss */
+/* line 190, ../../app/styles/main.scss */
 .thumbnail {
   min-height: 390px;
+  border: 1px solid #bbb;
 }
-/* line 155, ../../app/styles/main.scss */
+/* line 193, ../../app/styles/main.scss */
 .thumbnail img {
   height: 220px;
 }
-/* line 158, ../../app/styles/main.scss */
+/* line 196, ../../app/styles/main.scss */
 .thumbnail h3 {
   font-size: 18px;
   font-weight: normal;
 }
-/* line 162, ../../app/styles/main.scss */
+/* line 200, ../../app/styles/main.scss */
 .thumbnail .price {
   font-weight: bold;
   font-size: 18px;
 }
 
 /******* Product List ********/
-/* line 169, ../../app/styles/main.scss */
+/* line 207, ../../app/styles/main.scss */
 .products-list {
   list-style-type: none;
   padding: 0;
 }
-/* line 172, ../../app/styles/main.scss */
+/* line 210, ../../app/styles/main.scss */
 .products-list .products-list-item {
-  padding: 5px 10px;
+  padding: 10px 4px;
   border-width: 1px 0;
   border-style: solid;
   border-color: transparent;
-  border-bottom-color: #e4e4e4;
+  border-bottom-color: #bbb;
 }
-/* line 178, ../../app/styles/main.scss */
+/* line 216, ../../app/styles/main.scss */
 .products-list .products-list-item img {
   display: block;
   float: left;
   height: 120px;
   width: 130px;
 }
-/* line 184, ../../app/styles/main.scss */
+/* line 222, ../../app/styles/main.scss */
 .products-list .products-list-item .caption {
   float: left;
   margin-left: 10px;
 }
-/* line 188, ../../app/styles/main.scss */
+/* line 226, ../../app/styles/main.scss */
 .products-list .products-list-item h3 {
   font-size: 18px;
   font-weight: normal;
 }
-/* line 192, ../../app/styles/main.scss */
+/* line 230, ../../app/styles/main.scss */
 .products-list .products-list-item .price {
   font-weight: bold;
   font-size: 16px;
 }
 
 /******* Product Detail ********/
-/* line 201, ../../app/styles/main.scss */
+/* line 239, ../../app/styles/main.scss */
 .product-detail img {
   max-width: 100%;
   max-height: 100%;
