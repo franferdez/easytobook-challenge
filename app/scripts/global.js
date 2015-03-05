@@ -15,7 +15,10 @@ define(function(require){
 		var constants = {
 	    		PRODUCT_ADD: 'PRODUCT_ADD',
 	    		PRODUCT_UPD: 'PRODUCT_UPD',
-	    		PRODUCT_DEL: 'PRODUCT_DEL'
+	    		PRODUCT_DEL: 'PRODUCT_DEL',
+	    		BASKET_ADD: 'BASKET_ADD',
+	    		BASKET_UPD: 'BASKET_UPD',
+	    		BASKET_DEL: 'BASKET_DEL'
 	    	},
 
     		dispatcher = new Dispatch.Dispatcher();

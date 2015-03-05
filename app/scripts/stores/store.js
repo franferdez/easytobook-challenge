@@ -12,6 +12,7 @@ define(function(require){
         Backbone = require('backbone'),
         Utils = require('helpers/utils'),
         ProductsCollection = require('collections/ProductsCollection'),
+        BasketCollection = require('collections/BasketCollection'),
         products = require('text!vendor/products.json');
 
     var Store = (function() {
@@ -38,7 +39,8 @@ define(function(require){
             add: add,
             get: get,
             // load the static data and parse it on the collection and add it to a global singleton 
-            products: new ProductsCollection(JSON.parse(products).products)
+            products: new ProductsCollection(JSON.parse(products).products),
+            basket: new BasketCollection()
         };
 
     })();

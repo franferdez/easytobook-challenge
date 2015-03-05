@@ -32,7 +32,11 @@ define(function(require){
           case "list":
             return <ProductsListView />;
             break;
-            
+
+          case "basket":
+            return <ProductsBasketView />;
+            break;
+
           default:
             return <div />;
             break;
