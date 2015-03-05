@@ -17,6 +17,8 @@ define(function(require){
   BaseView.prototype.render = function () {
 
     var model = {};
+
+    $('#main-content').html('');
     
     React.render(<this.view />, $('#main-content')[0]);
   };

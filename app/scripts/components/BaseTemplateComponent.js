@@ -15,6 +15,11 @@ define(function(require){
             <section>
                 <header>
                   <h1>Products</h1>
+                  <ul className="nav nav-tabs">
+                    <li role="presentation"><a href="#products">Products</a></li>
+                    <li role="presentation"><a href="#list">List</a></li>
+                    <li role="presentation"><a href="#basket">Basket</a></li>
+                  </ul>
                 </header>
                 <article>
                 	{this.props.children}

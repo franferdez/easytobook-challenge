@@ -47,10 +47,10 @@ require([
     'backbone',
     'global',
     'helpers/Utils',
-    'routes/router'
+    'jsx!routes/router'
 ], function ($,_,Backbone,g,Utils,Router) {
     
-    var router = new Router();
+    //var router = new Router();
 
     Backbone.history.start();
 });

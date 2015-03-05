@@ -14,10 +14,10 @@ define(function(require){
       ProductThumbnailComponent = require('jsx!components/ProductThumbnailComponent'),
       SearchFilter = require('jsx!components/SearchFilterComponent');
 
-    var ProductsView = function(){};
+    var ProductsView /*= function(){};
     ProductsView.prototype = BaseView.prototype;
 
-    ProductsView.prototype.view =  React.createClass({
+    ProductsView.prototype.view*/ =  React.createClass({
         mixins: [storeMixin(store.products)],
 
         getInitialState: function() {

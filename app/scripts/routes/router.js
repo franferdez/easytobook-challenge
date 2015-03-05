@@ -6,37 +6,45 @@ define(function (require) {
      	React = require('react'),
      	g = require('global'),
      	Utils = require('helpers/Utils'),
-     	ProductsView = require('jsx!views/ProductsView');
+        InterfaceRouter = require('jsx!routes/InterfaceRouter');
 
     var Router = Backbone.Router.extend({
         routes: {
         	'products': 'products',
         	'products/:id': 'productDetail',
-        	'productslist': 'productsList',
+        	'list': 'productsList',
         	'basket': 'productBasket',
         	'*path': 'products'
         },
 
         products: function(){
-        	Utils.log('rendering ProductsView');
-
-        	var view  = new ProductsView;
-        	view.render();
+        	Utils.log('Rendering: ProductsView');
+            this.current = "products";
         },
 
         productsList: function(){
-        	Utils.log('productsList');
+        	Utils.log('Rendering: ProductsListView');
+            this.current = "list";
         },
 
         productDetail: function(id){
-        	Utils.log('productDetail');
+        	Utils.log('Rendering: ProductDetailView');
+            this.current = "detail";
         },
 
         productBasket: function(){
-        	Utils.log('productBasket');
+        	Utils.log('Rendering: ProductBasketView');
+            this.current = "basket";
         }
 
     });
 
-    return Router;
+    var router = new Router();
+
+    React.render(
+      <InterfaceRouter router={router} />,
+      $('#main-content')[0]
+    );
+
+    return router;
 });
