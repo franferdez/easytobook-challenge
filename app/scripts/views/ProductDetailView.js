@@ -15,9 +15,11 @@ define(function(require){
 
         return(         
             <BaseTemplate>
-              <div className="">
-                <img src={'images/products/' + model.get('img_bg')} alt={model.get('name')} />
-                <div className="caption">
+              <div className="product-detail row">
+                <div className="col-md-6">
+                  <img src={'images/products/' + model.get('img_bg')} alt={model.get('name')} />
+                </div>
+                <div className="caption col-md-6">
                   <h3>{model.get('name')}</h3>
                   {description.map(function(text) {
                     return (<p>{text}</p>);   

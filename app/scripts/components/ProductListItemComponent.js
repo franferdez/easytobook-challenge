@@ -19,7 +19,7 @@ define(function(require){
                     <h3>{model.get('name')}</h3>
                     <p className="price">{model.get('price') + ' EUR'}</p>
                   </div>
-                  <div className="clr" />
+                  <div className="clearfix" />
                 </li>
         );
     }

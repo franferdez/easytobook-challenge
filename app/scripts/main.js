@@ -45,12 +45,13 @@ require([
     'jquery',
     'underscore',
     'backbone',
+    'react',
     'global',
     'helpers/Utils',
     'jsx!routes/router'
-], function ($,_,Backbone,g,Utils,Router) {
+], function ($,_,Backbone,React,g,Utils,Router) {
     
-    //var router = new Router();
+    React.initializeTouchEvents(true);
 
     Backbone.history.start();
 });

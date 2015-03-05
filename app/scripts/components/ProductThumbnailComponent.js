@@ -18,7 +18,9 @@ define(function(require){
         return(         
             <div className="col-sm-6 col-md-4">
               <div className="thumbnail">
-                <img src={'images/products/' + model.get('img_md')} alt={model.get('name')} />
+                <a href={'#product/'+model.get('id')}>
+                  <img src={'images/products/' + model.get('img_md')} alt={model.get('name')} />
+                </a>
                 <div className="caption">
                   <h3>{model.get('name')}</h3>
                   <p className="price">{model.get('price') + ' EUR'}</p>

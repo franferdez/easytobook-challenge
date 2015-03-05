@@ -13,17 +13,32 @@ define(function(require){
         render: function (){
           return ( 
             <section>
-                <header>
+                <header className="header">
                   <h1>Products</h1>
-                  <ul className="nav nav-tabs">
-                    <li role="presentation"><a href="#products">Products</a></li>
-                    <li role="presentation"><a href="#list">List</a></li>
-                    <li role="presentation"><a href="#basket">Basket</a></li>
-                  </ul>
+                  <nav>
+                    <a href="#products" title="Products List">
+                      <button type="button" className="btn btn-default" aria-label="Products List">
+                        <span className="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                      </button>
+                    </a>
+                    <a href="#list" title="Products Thumbnails">
+                      <button type="button" className="btn btn-default" aria-label="Products Thumbnails">
+                        <span className="glyphicon glyphicon-th" aria-hidden="true"></span>
+                      </button>
+                    </a>
+                    <a href="#basket" title="Products Basket">
+                      <button type="button" className="btn btn-default" aria-label="Products Basket">
+                        <span className="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                      </button>
+                    </a>
+                  </nav>
                 </header>
                 <article>
                 	{this.props.children}
                 </article>
+                <footer>
+                    <p>Developed by Francisco</p>
+                </footer>
             </section>
           );
         }
