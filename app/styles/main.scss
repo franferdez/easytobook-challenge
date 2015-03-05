@@ -32,6 +32,7 @@ body {
 
 /* Custom page header */
 .header {
+    margin-bottom: 10px;
     background-color: rgba(255,255,255,0.8);
     border-bottom: 1px solid #e5e5e5;
     border-radius: 4px;
@@ -188,8 +189,9 @@ h2{
 
 /******* Product Thumbnails ********/
 .thumbnail{
-    min-height: 390px;
+    min-height: 360px;
     border: 1px solid #bbb;
+    padding-top: 10px;
     img{
         height: 220px;
     }
@@ -200,6 +202,10 @@ h2{
     .price{
         font-weight: bold;
         font-size: 18px;
+        float: left;
+    }
+    .add-basket{
+        float: right; 
     }
 }
 
@@ -231,6 +237,8 @@ h2{
             font-weight: bold;
             font-size: 16px;
         }
+
+
     }
 }
 

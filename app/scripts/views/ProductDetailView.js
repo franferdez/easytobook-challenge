@@ -30,7 +30,7 @@ define(function(require){
                     return (<p>{text}</p>);   
                   })}
                   <p>
-                    <button type="button" className="btn btn-info" onClick={this.addToCart}>Add to Basket</button>
+                    <button type="button" className="btn btn-info add-basket" onClick={this.addToCart}>Add to Basket</button>
                   </p>
                 </div>
               </div>
