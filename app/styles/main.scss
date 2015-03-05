@@ -132,8 +132,11 @@ h2{
     margin-top: 30px;
 }
 
+.clr{
+    clear: both;
+}
 
-/******* Thumbnails ********/
+/******* Product Thumbnails ********/
 .thumbnail{
     min-height: 350px;
     img{
@@ -148,3 +151,25 @@ h2{
         font-size: 18px;
     }
 }
+
+/******* Product List ********/
+.products-list{
+    list-style-type: none;
+    .products-list-item{
+        padding: 5px 10px;
+        border-width: 1px 0;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom-color: #e4e4e4;
+        img{
+            display: block;
+            float: left;
+            height: 120px;
+            width: 130px;
+        }
+        .caption{
+            float: left;
+        }
+    }
+}
+

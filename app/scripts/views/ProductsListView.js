@@ -41,7 +41,7 @@ define(function(require){
           return ( 
             <BaseTemplate>
               <SearchFilter searchFilter={this.state.searchFilter} onUserInput={this.handleUserInput} />
-              <ul>
+              <ul className="products-list">
                 {collection.map(function(productModel) {
                   return <ProductListItemComponent  model={productModel} />    
                 })}

@@ -6,7 +6,7 @@ define(function(require){
       React = require('react');
 
 
-  var ProductThumbnailComponent =  React.createClass({
+  var ProductDetailView =  React.createClass({
     render: function(){
         var model = this.props.model;
 
@@ -33,5 +33,5 @@ define(function(require){
     }
   });
   
-  return ProductThumbnailComponent;
+  return ProductDetailView;
 });

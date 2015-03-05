@@ -8188,22 +8188,52 @@ h2 {
   margin-top: 30px;
 }
 
-/******* Thumbnails ********/
-/* line 137, ../../app/styles/main.scss */
+/* line 135, ../../app/styles/main.scss */
+.clr {
+  clear: both;
+}
+
+/******* Product Thumbnails ********/
+/* line 140, ../../app/styles/main.scss */
 .thumbnail {
   min-height: 350px;
 }
-/* line 139, ../../app/styles/main.scss */
+/* line 142, ../../app/styles/main.scss */
 .thumbnail img {
   height: 220px;
 }
-/* line 142, ../../app/styles/main.scss */
+/* line 145, ../../app/styles/main.scss */
 .thumbnail h3 {
   font-size: 18px;
   font-weight: normal;
 }
-/* line 146, ../../app/styles/main.scss */
+/* line 149, ../../app/styles/main.scss */
 .thumbnail .price {
   font-weight: bold;
   font-size: 18px;
+}
+
+/******* Product List ********/
+/* line 156, ../../app/styles/main.scss */
+.products-list {
+  list-style-type: none;
+}
+/* line 158, ../../app/styles/main.scss */
+.products-list .products-list-item {
+  padding: 5px 10px;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #e4e4e4;
+}
+/* line 164, ../../app/styles/main.scss */
+.products-list .products-list-item img {
+  display: block;
+  float: left;
+  height: 120px;
+  width: 130px;
+}
+/* line 170, ../../app/styles/main.scss */
+.products-list .products-list-item .caption {
+  float: left;
 }
